@@ -1,2 +1,4 @@
-# Maze_C-
-An Maze Geneator + Solver written in C++
+# Maze_C++
+## By Florian FloRide Reimat
+# About 
+An Maze Generator + Solver written in C++
