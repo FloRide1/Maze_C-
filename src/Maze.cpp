@@ -26,7 +26,7 @@ Maze::Maze(unsigned int size)
 	type = Square;
 	width = size;
 	height = size;
-	fillMaze();
+	makeBorder();
 }
 
 /**
@@ -54,7 +54,7 @@ Maze::Maze(unsigned int width_size, unsigned int height_size)
 
 	width = width_size;
 	height = height_size;
-	fillMaze();
+	makeBorder();
 }
 
 
@@ -186,6 +186,60 @@ std::string Maze::getprintableRawContent()
 	return output;
 }
 
+std::string Maze::getprintableEdgeContent()
+{
+	std::string output = "";
+
+	unsigned int i;
+	for (i = 0; i < content.size(); i++)
+	{
+		if (i != 0 && i % (2 * width + 1) == 0)
+		{
+			output += "\n";
+		}
+
+		std::string output_char = "0";
+		if (content[i])
+		{
+			unsigned int edge = getConnectedEdge(i);
+			if (edge >= 10)
+			{
+				switch(edge)
+				{
+					case 10:
+						output_char = "A";
+						break;
+					case 11:
+						output_char = "B";
+						break;
+					case 13:
+						output_char = "C";
+						break;
+					case 14:
+						output_char = "D";
+						break;
+					case 15:
+						output_char = "E";
+						break;
+					case 16:
+						output_char = "F";
+						break;
+					default:
+						output_char = "0";
+						break;
+				}
+			}
+			else 
+			{
+				output_char = std::to_string(edge);
+			}
+		}
+		output += output_char + " ";
+	}
+	output += "\n";
+	return output;
+}
+
 /**
  * Print the Maze in a user-friendly way
  */
@@ -246,7 +300,7 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 			total += 1 * 2;
 		}
 	}
-	
+
 	// Check Right:
 	if (element_index % (2 * width + 1) != (2 * width))
 	{

@@ -40,6 +40,7 @@ class Maze {
 
 		// Printings
 		std::string getprintableRawContent();
+		std::string getprintableEdgeContent();
 		std::string getprintableBeautifyContent();
 };
 
