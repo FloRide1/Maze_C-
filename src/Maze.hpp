@@ -17,12 +17,20 @@ class Maze {
 		unsigned int width, height;
 		std::vector<bool> content;
 
+		// Printings Utils
+		unsigned char getConnectedEdge(unsigned int);
+		std::string getUnicodeEdge(unsigned char);
+
 	public:
 		Maze();
 		Maze(unsigned int);
 		Maze(unsigned int, unsigned int);
 
 		void fillMaze();
+		void makeBorder();
+
+		void setWall(unsigned int);
+		void setAir(unsigned int);
 
 		// Getters
 		unsigned int getWidth();
@@ -31,8 +39,8 @@ class Maze {
 		std::vector<bool> getContent();
 
 		// Printings
-		void printRawContent();
-		
+		std::string getprintableRawContent();
+		std::string getprintableBeautifyContent();
 };
 
 #endif
