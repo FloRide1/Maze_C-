@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	Maze maze(8);
-	Maze maze2(8, 6);
+	Maze maze2(2, 3);
 	maze2.makeBorder();
 
 	maze2.setWall(7);
@@ -14,8 +14,10 @@ int main()
 	maze2.setAir(4);
 	
 	cout << maze.getprintableBeautifyContent();
-
+	cout << endl;
 	cout << maze2.getprintableBeautifyContent();
+	cout << endl;
+	cout << maze2.getcorrectedprintableBeautifyContent();
 	return 0;
 }
 

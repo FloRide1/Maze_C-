@@ -268,6 +268,50 @@ std::string Maze::getprintableBeautifyContent()
 	return output;
 }
 
+std::string Maze::getcorrectedprintableBeautifyContent()
+{
+	
+	std::string output = "";
+	std::string bonus_char = "─";
+
+	unsigned int i;
+	for (i = 0; i < content.size(); i++)
+	{
+		bool bonus = false;
+		if (i != 0 && i % (2 * width + 1) == 0)
+		{
+			output += "\n";
+		}
+
+		std::string output_char = " ";
+		if (content[i])
+		{
+			unsigned int edge = getConnectedEdge(i);
+			output_char = getUnicodeEdge(edge);
+			if (edge == 15 || edge == 13 || edge == 11 || edge == 9 || edge == 7 || edge == 5 || edge == 3 || edge == 1)
+			{
+				bonus = true;
+			}
+			else 
+			{
+				bonus = false;
+			}
+		}
+
+		output += output_char;
+		if (bonus)
+		{
+			output += bonus_char;
+		}
+		else 
+		{
+			output += " ";
+		}
+	}
+	output += "\n";
+	return output;
+}
+
 
 unsigned char Maze::getConnectedEdge(unsigned int element_index)
 {
@@ -352,3 +396,17 @@ std::string Maze::getUnicodeEdge(unsigned char edge)
 			return " ";
 	}
 }
+
+// ┌───┐ 5  1 1 1
+// │   │    1 0 1 
+// └───┘    1 1 1
+// 3
+// ┌───┬───┐ 9
+// │   │   │
+// ├───┼───┤
+// │   │   │
+// └───┴───┘
+// 5
+// ┌─┬─┐
+// │   │
+// └─┴─┘
