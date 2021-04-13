@@ -1,4 +1,5 @@
 #include "Maze.hpp"
+#include <vector>
 
 /**
  * Print the Raw Content (1 -> Wall, 0 -> Free) 
@@ -141,6 +142,24 @@ std::string Maze::getcorrectedprintableBeautifyContent()
 		{
 			output += " ";
 		}
+	}
+	output += "\n";
+	return output;
+}
+
+std::string Maze::getprintableMergerArray(std::vector<unsigned int> merge_array)
+{
+	unsigned int i;
+	std::string output = "";
+
+	for (i = 0; i < merge_array.size(); i++)
+	{
+		if (i != 0 && i % width == 0)
+		{
+			output += "\n";
+		}
+		output += std::to_string(merge_array[i]);
+		output += " ";
 	}
 	output += "\n";
 	return output;

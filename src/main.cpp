@@ -5,13 +5,10 @@ using namespace std;
 
 int main()
 {
-	Maze maze(8);
-	Maze maze2(2, 3);
-	maze.makeGrid();
+	Maze maze(20);
+	maze.genMazeByMergerMethod();
 	
 	cout << maze.getcorrectedprintableBeautifyContent();
-	cout << endl;
-	cout << maze2.getcorrectedprintableBeautifyContent();
 	return 0;
 }
 
