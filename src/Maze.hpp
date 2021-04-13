@@ -27,6 +27,7 @@ class Maze {
 		Maze(unsigned int, unsigned int);
 
 		void fillMaze();
+		void makeGrid();
 		void makeBorder();
 
 		void setWall(unsigned int);
@@ -43,6 +44,9 @@ class Maze {
 		std::string getprintableEdgeContent();
 		std::string getprintableBeautifyContent();
 		std::string getcorrectedprintableBeautifyContent();
+
+		// Generator
+		void genMazeByMergerMethod();
 };
 
 #endif

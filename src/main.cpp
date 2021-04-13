@@ -7,15 +7,9 @@ int main()
 {
 	Maze maze(8);
 	Maze maze2(2, 3);
-	maze2.makeBorder();
-
-	maze2.setWall(7);
-	maze2.setWall(11);
-	maze2.setAir(4);
+	maze.makeGrid();
 	
-	cout << maze.getprintableBeautifyContent();
-	cout << endl;
-	cout << maze2.getprintableBeautifyContent();
+	cout << maze.getcorrectedprintableBeautifyContent();
 	cout << endl;
 	cout << maze2.getcorrectedprintableBeautifyContent();
 	return 0;
