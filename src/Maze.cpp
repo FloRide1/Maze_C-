@@ -233,6 +233,48 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 	return total;
 }
 
+unsigned char Maze::getPathConnectedEdge(unsigned int element_index, std::vector<unsigned int> path)
+{
+	unsigned char total = 0;
+
+	if (element_index >= (2 * width + 1))
+	{
+		if (std::find(path.begin(), path.end(), element_index - (2 * width + 1)) != path.end())
+		{
+			total += 1 * 8;
+		}
+	}
+
+	// Check Bottom:
+	if (element_index < (2 * height) * (2 * width + 1))
+	{
+		if (std::find(path.begin(), path.end(), element_index + (2 * width + 1)) != path.end())
+		{
+			total += 1 * 4;
+		}
+	}
+
+	// Check Left:
+	if (element_index % (2 * width + 1) != 0)
+	{
+		if (std::find(path.begin(), path.end(), element_index - 1) != path.end())
+		{
+			total += 1 * 2;
+		}
+	}
+
+	// Check Right:
+	if (element_index % (2 * width + 1) != (2 * width))
+	{
+		if (std::find(path.begin(), path.end(), element_index + 1) != path.end())
+		{
+			total += 1 * 1;
+		}
+	}
+
+	return total;
+}
+
 std::string Maze::getUnicodeEdge(unsigned char edge)
 {
 	switch (edge)

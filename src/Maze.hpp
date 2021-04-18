@@ -3,6 +3,9 @@
 #include <iostream>
 #include <vector>
 
+/// For now only for Maze_UI ...
+#include "Color.hpp"
+
 /// For now only for Maze_Gen ...
 #include <numeric>
 #include <random>
@@ -25,6 +28,7 @@ class Maze {
 
 		// Printings Utils
 		unsigned char getConnectedEdge(unsigned int);
+		unsigned char getPathConnectedEdge(unsigned int, std::vector<unsigned int>);
 		std::string getUnicodeEdge(unsigned char);
 
 		// Generator Utils
@@ -57,7 +61,7 @@ class Maze {
 		std::string getprintableEdgeContent();
 		std::string getprintableBeautifyContent();
 		std::string getcorrectedprintableBeautifyContent();
-		std::string getprintablePath();
+		std::string getprintablePath(std::vector<unsigned int>);
 
 		// Generator
 		void genMazeByMergerMethod();
