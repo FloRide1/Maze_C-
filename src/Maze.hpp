@@ -57,6 +57,7 @@ class Maze {
 		std::string getprintableEdgeContent();
 		std::string getprintableBeautifyContent();
 		std::string getcorrectedprintableBeautifyContent();
+		std::string getprintablePath();
 
 		// Generator
 		void genMazeByMergerMethod();

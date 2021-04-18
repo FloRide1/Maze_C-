@@ -164,3 +164,4 @@ std::string Maze::getprintableMergerArray(std::vector<unsigned int> merge_array)
 	output += "\n";
 	return output;
 }
+
