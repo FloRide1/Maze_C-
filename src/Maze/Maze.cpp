@@ -316,6 +316,48 @@ std::string Maze::getUnicodeEdge(unsigned char edge)
 	}
 }
 
+std::vector<unsigned int> Maze::listAllPathChoices(unsigned int index)
+{
+	std::vector<unsigned int> total = std::vector<unsigned>();
+
+	// Check Top:
+	if (index >= (2 * width + 1))
+	{
+		if (!content[index - (2 * width + 1)])
+		{
+			total.push_back(index - (2 * width + 1));
+		}
+	}
+
+	// Check Bottom:
+	if (index < (2 * height) * (2 * width + 1))
+	{
+		if (!content[index + (2 * width + 1)])
+		{
+			total.push_back(index + (2 * width + 1));
+		}
+	}
+
+	// Check Left:
+	if (!index % (2 * width + 1) != 0)
+	{
+		if (!content[index - 1])
+		{
+			total.push_back(index - 1);
+		}
+	}
+
+	// Check Right:
+	if (index % (2 * width + 1) != (2 * width))
+	{
+		if (!content[index + 1])
+		{
+			total.push_back(index + 1);
+		}
+	}
+	return total;
+}
+
 // ┌───┐ 5  1 1 1
 // │   │    1 0 1 
 // └───┘    1 1 1

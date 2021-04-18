@@ -44,12 +44,14 @@ class Maze
 		Maze(unsigned int);
 		Maze(unsigned int, unsigned int);
 
+		// Utils
 		void fillMaze();
 		void makeGrid();
 		void makeBorder();
-
 		void setWall(unsigned int);
 		void setAir(unsigned int);
+
+		std::vector<unsigned int> listAllPathChoices(unsigned int);
 
 		// Getters
 		unsigned int getWidth();

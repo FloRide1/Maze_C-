@@ -17,5 +17,7 @@ class Graph
 		
 		void extractGraphFromFullMaze(Maze);
 		void extractGraphFromMaze(Maze);
+
+		std::string printIncidenceMatrix();
 };
 #endif
