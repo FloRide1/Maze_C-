@@ -1,4 +1,4 @@
-#include "Maze.hpp"
+#include "../Maze.hpp"
 #include <string>
 #include <vector>
 

@@ -6,10 +6,9 @@ OBJ_DIR  := $(BUILD)/objects
 APP_DIR  := $(BUILD)/apps
 TARGET   := program
 INCLUDE  := 
-SRC      :=                      \
-	$(wildcard src/module1/*.cpp) \
-	$(wildcard src/module2/*.cpp) \
-	$(wildcard src/*.cpp)         \
+SRC      :=                     \
+	$(wildcard src/Maze/*.cpp) 	\
+	$(wildcard src/*.cpp)       \
 
 OBJECTS  := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 DEPENDENCIES \

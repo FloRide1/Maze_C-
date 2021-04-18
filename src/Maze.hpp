@@ -65,6 +65,12 @@ class Maze {
 
 		// Generator
 		void genMazeByMergerMethod();
+
+		// Graph
+
+		// Solver
+		std::vector<unsigned int> solveMazeByDjikstra();
+		
 };
 
 #endif

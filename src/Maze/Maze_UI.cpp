@@ -1,4 +1,4 @@
-#include "Maze.hpp"
+#include "../Maze.hpp"
 #include <string>
 #include <vector>
 
@@ -176,7 +176,7 @@ std::string Maze::getprintablePath(std::vector<unsigned int> path)
 		{
 			unsigned int edge = getPathConnectedEdge(i, path);
 			bonus = (edge == 15 || edge == 13 || edge == 11 || edge == 9 || edge == 7 || edge == 5 || edge == 3 || edge == 1);
-			std::string edge_char = "╳";
+			std::string edge_char = "●";
 			output_char = KRED + getUnicodeEdge(edge);
 			if (i != path[0] && i != path[path.size() - 1])
 			{
