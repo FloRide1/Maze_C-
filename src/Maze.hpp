@@ -20,7 +20,8 @@ enum MazeType
 };
 
 
-class Maze {
+class Maze 
+{
 	private:
 		MazeType type;
 		unsigned int width, height;
@@ -69,7 +70,7 @@ class Maze {
 		// Graph
 
 		// Solver
-		std::vector<unsigned int> solveMazeByDjikstra();
+		std::vector<unsigned int> solveMazeByDjikstra(unsigned int, unsigned int);
 		
 };
 

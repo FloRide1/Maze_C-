@@ -10,6 +10,8 @@ int main()
 	Maze maze(5);
 	maze.genMazeByMergerMethod();
 
+	cout << "Main: " << endl;
+
 	// cout << maze.getprintableBeautifyContent();
 	vector<unsigned int> my_path;
 	my_path.push_back(13);
