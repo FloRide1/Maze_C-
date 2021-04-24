@@ -1,26 +1,33 @@
 #include "../Graph.hpp"
 #include <algorithm>
 #include <vector>
+#include <tuple>
 
 Graph::Graph()
 {
-	vertex = std::vector<unsigned int>();
+	vertices = std::vector<unsigned int>();
 	edge = std::vector<unsigned int>();
-	matrix = std::vector<std::vector<bool>>();
+	adjacency_list = std::vector<std::vector<std::tuple<unsigned int, unsigned int>>>();
+	
 }
 
-Graph::Graph(std::vector<unsigned int> vertex, std::vector<unsigned int> edge, std::vector<std::vector<bool>> matrix)
+Graph::Graph(std::vector<unsigned int> vertices, std::vector<unsigned int> edge, std::vector<std::vector<std::tuple<unsigned int, unsigned int>>> adjacency_list)
 {
-	this->vertex = vertex;
+	this->vertices = vertices;
 	this->edge = edge;
-	this->matrix = matrix;
+	this->adjacency_list = adjacency_list;
 }
 
+
+///
+// Construct an unweighted graph from a maze as each case is one node (or vertex) connected to nearby case
+//
+///
 void Graph::extractGraphFromFullMaze(Maze maze)
 {
-	vertex = std::vector<unsigned int>();
+	vertices = std::vector<unsigned int>();
 	edge = std::vector<unsigned int>();
-	matrix = std::vector<std::vector<bool>>();
+	adjacency_list = std::vector<std::vector<std::tuple<unsigned int, unsigned int>>>();
 
 	MazeType type = maze.getTypeOfMaze();
 	unsigned int width = maze.getWidth();
@@ -29,36 +36,22 @@ void Graph::extractGraphFromFullMaze(Maze maze)
 
 	unsigned int i = 0;
 	unsigned int number_of_vertex = std::count(content.begin(), content.end(), false);
-	matrix = std::vector<std::vector<bool>>(number_of_vertex, std::vector<bool>());
-	while (vertex.size() < number_of_vertex)
+	adjacency_list = std::vector<std::vector<std::tuple<unsigned int, unsigned int>>>(number_of_vertex, std::vector<std::tuple<unsigned int, unsigned int>>());
+	while (vertices.size() < number_of_vertex)
 	{
 		if (!content[i])
 		{
-			vertex.push_back(i);
+			vertices.push_back(i);
 		}
 		i++;
 	}
 	
-	for (unsigned int ver : vertex)
+	for (unsigned int vertex : vertices)
 	{
-		std::vector<unsigned int> list_of_choices = maze.listAllPathChoices(ver);
+		std::vector<unsigned int> list_of_choices = maze.listAllPathChoices(vertex);
 		for (unsigned int choice : list_of_choices)
 		{
-			if (ver < choice)
-			{
-				edge.push_back(1); /// All edge are dist 1;
-				for (unsigned int i; i < number_of_vertex; i++)
-				{
-					if (vertex[i] == ver || vertex[i] == choice)
-					{
-						matrix[i].push_back(true);
-					}
-					else
-					{
-						matrix[i].push_back(false);
-					}
-				}
-			}
+			
 		}
 	}
 }
