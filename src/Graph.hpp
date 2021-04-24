@@ -1,5 +1,5 @@
-#ifndef GRAPH
-#define GRAPH
+#ifndef GRAPH_OBJECT
+#define GRAPH_OBJECT
 
 #include <tuple>
 #include <vector>
@@ -11,6 +11,8 @@ class Graph
 		std::vector<unsigned int> vertices;
 		std::vector<unsigned int> edge;
 		std::vector<std::vector<std::tuple<unsigned int, unsigned int>>> adjacency_list;
+
+		std::string getPadding(std::string, const size_t, const char);
 		
 	public:
 		Graph();
@@ -19,6 +21,7 @@ class Graph
 		void extractGraphFromFullMaze(Maze);
 		void extractGraphFromMaze(Maze);
 
-		std::string printIncidenceMatrix();
+		std::string printAdjacencyList();
 };
+
 #endif

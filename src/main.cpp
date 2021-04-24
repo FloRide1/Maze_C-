@@ -1,5 +1,6 @@
 #include "Color.hpp"
 #include "Maze.hpp"
+#include "Graph.hpp"
 #include <iostream>
 #include <vector>
 
@@ -12,15 +13,13 @@ int main()
 
 	cout << "Main: " << endl;
 
-	// cout << maze.getprintableBeautifyContent();
-	vector<unsigned int> my_path;
-	my_path.push_back(13);
-	my_path.push_back(12);
-	my_path.push_back(23);
-
 	string maze_print = maze.getcorrectedprintableBeautifyContent();
 	cout << maze_print << endl;
-	
+
+	Graph graph;
+	graph.extractGraphFromFullMaze(maze);
+
+	cout << graph.printAdjacencyList() << endl;
 
 	return 0;
 }

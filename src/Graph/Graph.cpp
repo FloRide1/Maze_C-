@@ -8,7 +8,6 @@ Graph::Graph()
 	vertices = std::vector<unsigned int>();
 	edge = std::vector<unsigned int>();
 	adjacency_list = std::vector<std::vector<std::tuple<unsigned int, unsigned int>>>();
-	
 }
 
 Graph::Graph(std::vector<unsigned int> vertices, std::vector<unsigned int> edge, std::vector<std::vector<std::tuple<unsigned int, unsigned int>>> adjacency_list)
@@ -17,7 +16,6 @@ Graph::Graph(std::vector<unsigned int> vertices, std::vector<unsigned int> edge,
 	this->edge = edge;
 	this->adjacency_list = adjacency_list;
 }
-
 
 ///
 // Construct an unweighted graph from a maze as each case is one node (or vertex) connected to nearby case
@@ -53,8 +51,11 @@ void Graph::extractGraphFromFullMaze(Maze maze)
 		{
 			if (vertex < choice)
 			{
-				adjacency_list[vertex].push_back(std::tuple<unsigned int, unsigned int>(choice , 1));
-				adjacency_list[choice].push_back(std::tuple<unsigned int, unsigned int>(vertex , 1));
+				std::tuple<unsigned int, unsigned int> choice_tuple = std::tuple<unsigned int, unsigned int>(choice , 1);
+				std::tuple<unsigned int, unsigned int> vertex_tuple = std::tuple<unsigned int, unsigned int>(vertex , 1);
+
+				adjacency_list[vertex].push_back(choice_tuple);
+				adjacency_list[choice].push_back(vertex_tuple);
 			}
 		}
 	}

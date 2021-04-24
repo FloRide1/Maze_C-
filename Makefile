@@ -7,6 +7,7 @@ APP_DIR  := $(BUILD)/apps
 TARGET   := program
 INCLUDE  := 
 SRC      :=                     \
+	$(wildcard src/Graph/*.cpp) 	\
 	$(wildcard src/Maze/*.cpp) 	\
 	$(wildcard src/*.cpp)       \
 
