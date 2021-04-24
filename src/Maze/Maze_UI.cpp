@@ -38,7 +38,7 @@ std::string Maze::getprintableEdgeContent()
 		std::string output_char = "0";
 		if (content[i])
 		{
-			unsigned int edge = getConnectedEdge(i);
+			unsigned int edge = getConnectedEdge(i, true);
 			if (edge >= 10)
 			{
 				switch(edge)
@@ -95,7 +95,7 @@ std::string Maze::getprintableBeautifyContent()
 		std::string output_char = " ";
 		if (content[i])
 		{
-			unsigned int edge = getConnectedEdge(i);
+			unsigned int edge = getConnectedEdge(i, true);
 			output_char = getUnicodeEdge(edge);
 		}
 
@@ -104,6 +104,7 @@ std::string Maze::getprintableBeautifyContent()
 	output += "\n";
 	return output;
 }
+
 std::string Maze::getcorrectedprintableBeautifyContent()
 {
 	std::string output = "";
@@ -121,7 +122,7 @@ std::string Maze::getcorrectedprintableBeautifyContent()
 		std::string output_char = " ";
 		if (content[i])
 		{
-			unsigned int edge = getConnectedEdge(i);
+			unsigned int edge = getConnectedEdge(i, true);
 			output_char = getUnicodeEdge(edge);
 			bonus = (edge == 15 || edge == 13 || edge == 11 || edge == 9 || edge == 7 || edge == 5 || edge == 3 || edge == 1);
 		}
@@ -168,7 +169,7 @@ std::string Maze::getprintablePath(std::vector<unsigned int> path)
 		std::string output_char = " ";
 		if (content[i])
 		{
-			unsigned int edge = getConnectedEdge(i);
+			unsigned int edge = getConnectedEdge(i, true);
 			output_char = getUnicodeEdge(edge);
 			bonus = (edge == 15 || edge == 13 || edge == 11 || edge == 9 || edge == 7 || edge == 5 || edge == 3 || edge == 1);
 		}

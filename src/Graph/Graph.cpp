@@ -51,7 +51,11 @@ void Graph::extractGraphFromFullMaze(Maze maze)
 		std::vector<unsigned int> list_of_choices = maze.listAllPathChoices(vertex);
 		for (unsigned int choice : list_of_choices)
 		{
-			
+			if (vertex < choice)
+			{
+				adjacency_list[vertex].push_back(std::tuple<unsigned int, unsigned int>(choice , 1));
+				adjacency_list[choice].push_back(std::tuple<unsigned int, unsigned int>(vertex , 1));
+			}
 		}
 	}
 }

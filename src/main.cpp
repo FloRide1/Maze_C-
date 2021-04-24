@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	Maze maze(5);
+	Maze maze(10);
 	maze.genMazeByMergerMethod();
 
 	cout << "Main: " << endl;
@@ -21,8 +21,6 @@ int main()
 	string maze_print = maze.getcorrectedprintableBeautifyContent();
 	cout << maze_print << endl;
 	
-	string maze_path_print = maze.getprintablePath(my_path);
-	cout << maze_path_print;
 
 	return 0;
 }

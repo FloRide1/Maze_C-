@@ -190,7 +190,7 @@ std::vector<bool> Maze::getContent()
 	return content;
 }
 
-unsigned char Maze::getConnectedEdge(unsigned int element_index)
+unsigned char Maze::getConnectedEdge(unsigned int element_index, bool isWallOrAir)
 {
 	/// [Top, Bottom, Left, Right] -> 8 * Top + 4 * Bottom 2 + * Left + 1 * Right
 	unsigned char total = 0;
@@ -198,7 +198,7 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 	// Check Top:
 	if (element_index >= (2 * width + 1))
 	{
-		if (content[element_index - (2 * width + 1)])
+		if (content[element_index - (2 * width + 1)] == isWallOrAir)
 		{
 			total += 1 * 8;
 		}
@@ -207,7 +207,7 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 	// Check Bottom:
 	if (element_index < (2 * height) * (2 * width + 1))
 	{
-		if (content[element_index + (2 * width + 1)])
+		if (content[element_index + (2 * width + 1)] == isWallOrAir)
 		{
 			total += 1 * 4;
 		}
@@ -216,7 +216,7 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 	// Check Left:
 	if (element_index % (2 * width + 1) != 0)
 	{
-		if (content[element_index - 1])
+		if (content[element_index - 1] == isWallOrAir)
 		{
 			total += 1 * 2;
 		}
@@ -225,7 +225,7 @@ unsigned char Maze::getConnectedEdge(unsigned int element_index)
 	// Check Right:
 	if (element_index % (2 * width + 1) != (2 * width))
 	{
-		if (content[element_index + 1])
+		if (content[element_index + 1] == isWallOrAir)
 		{
 			total += 1 * 1;
 		}

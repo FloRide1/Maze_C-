@@ -28,7 +28,7 @@ class Maze
 		std::vector<bool> content;
 
 		// Printings Utils
-		unsigned char getConnectedEdge(unsigned int);
+		unsigned char getConnectedEdge(unsigned int, bool);
 		unsigned char getPathConnectedEdge(unsigned int, std::vector<unsigned int>);
 		std::string getUnicodeEdge(unsigned char);
 
