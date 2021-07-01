@@ -48,3 +48,13 @@ An Maze Generator + Solver written in C++
 └───┴───────┴───────────────────┴───────────┴───┴───────────────────────┴───────┘
 ```
 20 x 20 Maze
+
+TODO:
+- [ ] Generator:
+	- [x] Fusion
+	- [ ] Backtrack
+- [ ] Solver:
+	- [ ] Left / Right Hand
+	- [ ] Pledge
+	- [ ] Djikstra
+	- [ ] A*
