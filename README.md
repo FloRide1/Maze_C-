@@ -50,6 +50,9 @@ An Maze Generator + Solver written in C++
 20 x 20 Maze
 
 TODO:
+- [ ] UI:
+	- [ ] CLI
+	- [ ] Qt (or else)
 - [ ] Generator:
 	- [x] Fusion
 	- [ ] Backtrack
