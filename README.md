@@ -51,7 +51,7 @@ An Maze Generator + Solver written in C++
 
 TODO:
 - [ ] UI:
-	- [ ] CLI 
+	- [x] CLI 
 	- [ ] Console
 	- [ ] Qt (or else)
 - [ ] Generator:
