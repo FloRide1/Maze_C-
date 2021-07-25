@@ -49,7 +49,7 @@ An Maze Generator + Solver written in C++
 ```
 20 x 20 Maze
 
-TODO:
+## TODO:
 - [ ] UI:
 	- [x] CLI 
 	- [ ] Console
@@ -62,3 +62,6 @@ TODO:
 	- [ ] Pledge
 	- [ ] Djikstra
 	- [ ] A*
+
+## Licence
+GNU 3
