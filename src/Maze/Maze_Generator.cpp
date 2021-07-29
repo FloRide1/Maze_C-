@@ -126,7 +126,6 @@ unsigned int Maze::convertMergerDirectionToOffset(unsigned char direction)
 
 void Maze::deleteMergerDirectionWall(unsigned int index, unsigned char direction)
 {
-
 	unsigned int x_index = index % width;
 	unsigned int y_index = (index - x_index) / width;
 

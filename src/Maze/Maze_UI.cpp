@@ -124,7 +124,7 @@ std::string Maze::getcorrectedprintableBeautifyContent()
 		{
 			unsigned int edge = getConnectedEdge(i, true);
 			output_char = getUnicodeEdge(edge);
-			bonus = (edge == 15 || edge == 13 || edge == 11 || edge == 9 || edge == 7 || edge == 5 || edge == 3 || edge == 1);
+			bonus = (edge % 2 == 1);
 		}
 
 		output += output_char;
