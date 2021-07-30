@@ -51,11 +51,13 @@ void Graph::extractGraphFromFullMaze(Maze maze)
 		{
 			if (vertex < choice)
 			{
-				std::tuple<unsigned int, unsigned int> choice_tuple = std::tuple<unsigned int, unsigned int>(choice , 1);
-				std::tuple<unsigned int, unsigned int> vertex_tuple = std::tuple<unsigned int, unsigned int>(vertex , 1);
+				// DON'T WORK I DUNNO WHY
+				// std::tuple<unsigned int, unsigned int> choice_tuple = std::tuple<unsigned int, unsigned int>(choice , 1);
+				// std::tuple<unsigned int, unsigned int> vertex_tuple = std::tuple<unsigned int, unsigned int>(vertex , 1);
 
-				adjacency_list[vertex].push_back(choice_tuple);
-				adjacency_list[choice].push_back(vertex_tuple);
+				// adjacency_list[vertex].push_back(choice_tuple);
+				// adjacency_list[choice].push_back(vertex_tuple);
+				//
 			}
 		}
 	}
