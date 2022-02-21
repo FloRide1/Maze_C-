@@ -6,6 +6,12 @@
 
 #include "constant.hpp"
 
+Maze::Maze()
+{
+    size_x = 0;
+    size_y = 0;
+}
+
 Maze::Maze(size_t size_x, size_t size_y)
 {
     this->size_x = size_x;
