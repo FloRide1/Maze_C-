@@ -9,7 +9,14 @@ set(CMAKE_CXX_STANDARD 20)
 # Set the CXXFLAGS
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -pedantic")
 
-file(GLOB SRC src/*.cpp)
+# Get all src files (cpp)
+file(GLOB_RECURSE SRC src/*.cpp)
+
+# Add include dir
+include_directories(include)
+
+# Clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Ouput Executable
 add_executable(maze.out ${SRC})
