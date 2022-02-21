@@ -1,10 +1,14 @@
 # Maze_C++
-## By Florian FloRide Reimat
-# About 
+
+## By Florian "FloRide" Reimat
+
+## About 
+
 An Maze Generator + Solver written in C++
 
-## Examples:
-```
+## Examples
+
+```txt
 ┌───────────────┬───────────────────────┬───────────┬───────────┬───┬───────────┐
 │               │                       │           │           │   │           │
 │   ┌───┐   ╷   └───┬───╴   ╷   ╶───────┴───────┐   ╵   ╷   ┌───┘   └───╴   ╷   │
@@ -47,15 +51,17 @@ An Maze Generator + Solver written in C++
 │   │       │                   │           │   │                       │       │
 └───┴───────┴───────────────────┴───────────┴───┴───────────────────────┴───────┘
 ```
+
 20 x 20 Maze
 
-## TODO:
+## TODO
+
 - [ ] UI:
-	- [x] CLI 
+	- [ ] CLI 
 	- [ ] Console
 	- [ ] Qt (or else)
 - [ ] Generator:
-	- [x] Fusion
+	- [ ] Fusion
 	- [ ] Backtrack
 - [ ] Solver:
 	- [ ] Left / Right Hand
@@ -64,4 +70,5 @@ An Maze Generator + Solver written in C++
 	- [ ] A*
 
 ## Licence
+
 GNU 3
