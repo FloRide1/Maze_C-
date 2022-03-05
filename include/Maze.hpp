@@ -60,8 +60,8 @@
 class Maze
 {
 private:
-    size_t size_x;
-    size_t size_y;
+    size_t size_x_;
+    size_t size_y_;
     std::vector<std::vector<bool>> maze;
     unsigned char get_direction(size_t x, size_t y);
     std::string convert_dir_to_wall(unsigned char);

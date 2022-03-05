@@ -9,17 +9,17 @@
 
 Maze::Maze()
 {
-    size_x = 0;
-    size_y = 0;
+    size_x_ = 0;
+    size_y_ = 0;
 }
 
 Maze::Maze(size_t size_x, size_t size_y)
 {
-    this->size_x = size_x;
-    this->size_y = size_y;
+    this->size_x_ = 2 * size_x + 1;
+    this->size_y_ = 2 * size_y + 1;
 
-    maze = std::vector<std::vector<bool>>(size_y,
-                                          std::vector<bool>(size_x, M_FULL));
+    maze = std::vector<std::vector<bool>>(size_y_,
+                                          std::vector<bool>(size_x_, M_FULL));
 }
 
 std::string Maze::to_string()
@@ -114,7 +114,7 @@ void Maze::print_cli()
 
 unsigned char Maze::get_direction(size_t x, size_t y)
 {
-    if (size_x == 0 || size_y == 0)
+    if (size_x_ == 0 || size_y_ == 0)
         throw std::length_error("The maze is too small");
     bool state = maze[y][x];
     unsigned char output = 0;
